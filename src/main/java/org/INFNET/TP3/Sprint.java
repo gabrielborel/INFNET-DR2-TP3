@@ -24,8 +24,10 @@ public class Sprint {
         return new Sprint(nome, dataInicio, dataFim, Optional.of(tasks));
     }
 
-    public void removerTarefa(Task tarefa) {
-        tarefas.remove(tarefa);
+    public Sprint removerTarefa(Task tarefa) {
+        List<Task> tasks = new ArrayList<>(tarefas);
+        tasks.remove(tarefa);
+        return new Sprint(nome, dataInicio, dataFim, Optional.of(tasks));
     }
 
     public void listarTarefas() {
