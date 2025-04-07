@@ -1,5 +1,7 @@
 package org.INFNET.TP3;
 
+import java.util.Objects;
+
 public class Task {
     private final String titulo;
     private final String descricao;
@@ -7,6 +9,11 @@ public class Task {
     private final User responsavel;
 
     public Task(String titulo, String descricao, Status status, User responsavel) {
+        Objects.requireNonNull(titulo, "Título não pode ser nulo");
+        Objects.requireNonNull(descricao, "Descrição não pode ser nula");
+        Objects.requireNonNull(status, "Status não pode ser nulo");
+        Objects.requireNonNull(responsavel, "Responsável não pode ser nulo");
+
         this.titulo = titulo;
         this.descricao = descricao;
         this.status = status;
